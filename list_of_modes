@@ -1,0 +1,25 @@
+[GridAlignment]
+align=LeftAlt
+alignToggle=F7
+changeDefaultAlignment=F6
+
+[AdvancedBuildingMode]
+enterAdvancedBuildingMode=F1
+exitAdvancedBuildingMode=F3
+copyObjectRotation=Keypad7
+pasteObjectRotation=Keypad8
+increaseScrollSpeed=KeypadPlus
+decreaseScrollSpeed=KeypadMinus
+
+[AdvancedEditingMode]
+enterAdvancedEditingMode=Numpad0
+resetAdvancedEditingMode=F7
+abortAndExitAdvancedEditingMode=F8
+confirmPlacementOfAdvancedEditingMode=KeypadEnter
+copyObjectRotation=Keypad7
+pasteObjectRotation=Keypad8
+increaseScrollSpeed=KeypadPlus
+decreaseScrollSpeed=KeypadMinus
+
+[Stamina]
+jump= -50%
