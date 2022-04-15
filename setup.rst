@@ -3,8 +3,8 @@ sudo docker run -d                                                              
 
 Useful links:
   docker:
-    https://hub.docker.com/r/lloesche/valheim-server#notify-on-discord
-    https://github.com/mbround18/valheim-docker
+   - https://hub.docker.com/r/lloesche/valheim-server#notify-on-discord
+   - https://github.com/mbround18/valheim-docker
   valheim plus:
     https://valheim.plus/documentation/list#Chat
 
