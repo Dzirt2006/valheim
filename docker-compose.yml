@@ -10,7 +10,7 @@ services:
     env_file:
       - narnia_ruins.env
     ports:      
-      - "2457:2457/udp"
+      - "2456:2457/udp"
     volumes:
       - /opt/valheim/narnia-ruins-server/config:/config 
       - /opt/valheim/narnia-ruins-server/data:/opt/valheim
