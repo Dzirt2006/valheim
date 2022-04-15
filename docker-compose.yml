@@ -1,7 +1,7 @@
 version: "3"
 services:
 
-  Narnia-ruins:
+  narnia-ruins:
     image: lloesche/valheim-server
     container_name: narnia-ruins 
     cap_add:
@@ -14,9 +14,9 @@ services:
     volumes:
       - /opt/valheim/narnia-ruins-server/config:/config 
       - /opt/valheim/narnia-ruins-server/data:/opt/valheim
-     
-  Narnia:
-    image: lloesche/valheim-servert
+    
+  narnia:
+    image: lloesche/valheim-server
     container_name: narnia
     cap_add:
       - sys_nice
