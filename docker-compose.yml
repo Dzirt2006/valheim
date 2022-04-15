@@ -8,11 +8,11 @@ services:
       - sys_nice
     restart: always
     environment:
-       SERVER_NAME: "Narnia Ruins" 
-       WORLD_NAME: "Utopia" 
-       SERVER_PASS: "w2w2w2" 
-       ON_VALHEIM_LOG_FILTER_CONTAINS_Connected: "cat >> /tmp/character_login"
-       POST_BOOTSTRAP_HOOK: "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install awscli"
+       - SERVER_NAME=Narnia Ruins
+       - WORLD_NAME=Utopia 
+       - SERVER_PASS=w2w2w2
+       - ON_VALHEIM_LOG_FILTER_CONTAINS_Connected=cat >> /tmp/character_login
+       - POST_BOOTSTRAP_HOOK=apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install awscli
     ports:      
       - "2457:2457/udp"
     volumes:
@@ -26,21 +26,21 @@ services:
       - sys_nice
     restart: always
     environment:
-       SERVER_NAME: "Narnia" 
-       WORLD_NAME: "Utopia" 
-       SERVER_PASS: "w2w2w2       
-       ON_VALHEIM_LOG_FILTER_CONTAINS_Connected: "cat >> /tmp/character_login"
-       POST_BOOTSTRAP_HOOK: "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install awscli"
-       DISCORD_WEBHOOK: "https://discord.com/api/webhooks/964003970374840330/jHgurx36MP9o8bv_DoyBQGasj16VPcn7hPyEtua7OZg9vTlRysIUhCSpqp_Ybnvw9SNV"       
-       DISCORD_MESSAGE: Restarting Valheim server in one minute!
-       'PRE_RESTART_HOOK='curl -sfSL -X POST -H "Content-Type: application/json" -d "{\"username\":\"Valheim\",\"content\":\"$DISCORD_MESSAGE\"}" "$DISCORD_WEBHOOK" && sleep 60'
-       DISCORD_MESSAGE: Starting Valheim server $$SERVER_NAME
-       'PRE_BOOTSTRAP_HOOK=curl -sfSL -X POST -H "Content-Type: application/json" -d "{\"username\":\"Valheim\",\"content\":\"$$(eval echo $$DISCORD_MESSAGE)\"}" "$$DISCORD_WEBHOOK"'
-       VALHEIM_PLUS: true
-       VPCFG_Server_enabled: true
-       VPCFG_Server_enforceMod: false
-       VPCFG_Server_dataRate: 500
-       BEPINEXCFG_Logging_DOT_Console_Enabled: true
+       - SERVER_NAME=Narnia
+       - WORLD_NAME=Utopia
+       - SERVER_PASS=w2w2w2       
+       - ON_VALHEIM_LOG_FILTER_CONTAINS_Connected=cat >> /tmp/character_login
+       - POST_BOOTSTRAP_HOOK=apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install awscli
+       - DISCORD_WEBHOOK=https://discord.com/api/webhooks/964003970374840330/jHgurx36MP9o8bv_DoyBQGasj16VPcn7hPyEtua7OZg9vTlRysIUhCSpqp_Ybnvw9SNV       
+       - DISCORD_MESSAGE=Restarting Valheim server in one minute!
+       - PRE_RESTART_HOOK='curl -sfSL -X POST -H "Content-Type: application/json" -d "{\"username\":\"Valheim\",\"content\":\"$DISCORD_MESSAGE\"}" "$DISCORD_WEBHOOK" && sleep 60'
+       - DISCORD_MESSAGE=Starting Valheim server $$SERVER_NAME
+       - PRE_BOOTSTRAP_HOOK='curl -sfSL -X POST -H "Content-Type: application/json" -d "{\"username\":\"Valheim\",\"content\":\"$$(eval echo $$DISCORD_MESSAGE)\"}" "$$DISCORD_WEBHOOK"'
+       - VALHEIM_PLUS=true
+       - VPCFG_Server_enabled=true
+       - VPCFG_Server_enforceMod=false
+       - VPCFG_Server_dataRate=500
+       - BEPINEXCFG_Logging_DOT_Console_Enabled=true
     ports:
       - "2456:2456/udp"
     volumes:
