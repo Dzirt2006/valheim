@@ -2,8 +2,8 @@ version: "3"
 services:
 
   Narnia-ruins:
-    container_name: narnia-ruins
-    image: lloesche/valheim-server:latest
+    image: lloesche/valheim-server
+    container_name: narnia-ruins 
     cap_add:
       - sys_nice
     restart: always
@@ -16,8 +16,8 @@ services:
       - /opt/valheim/narnia-ruins-server/data:/opt/valheim
      
   Narnia:
+    image: lloesche/valheim-servert
     container_name: narnia
-    image: lloesche/valheim-server:latest
     cap_add:
       - sys_nice
     restart: always
