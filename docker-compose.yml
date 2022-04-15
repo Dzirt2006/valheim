@@ -8,7 +8,7 @@ services:
       - sys_nice
     restart: always
     env_file:
-      - narnia-ruins.env
+      - narnia_ruins.env
     ports:      
       - "2457:2457/udp"
     volumes:
